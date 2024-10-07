@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Button } from "../../components/Button/styles";
-import { Icon } from "../../components/Icon/styles";
-import { NavModal } from "../../components/Modal";
+import { Button } from "../Button/styles";
+import { Icon } from "../Icon/styles";
+import { NavModal } from "../Modal";
 import { Items, Nav, Title } from "./styles";
 import { IoHomeOutline } from "react-icons/io5";
 import { TbMessageCircle } from "react-icons/tb";
-import { ProfileImage } from "../../components/Profile";
+import { ProfileImage } from "../ProfileImage";
+import { ImageOptions } from "../Images";
 
 
 
@@ -16,10 +17,7 @@ export const Navbar = () => {
     const onCloseModal = () => setOpen(false);
 
     //Info ProfileImage
-    const defaultImage = [
-        {src: "src/assets/default.svg", label: "Default"}
-    ]
-
+    const images = ImageOptions()
     return (
         <>
         <Nav>
@@ -37,7 +35,7 @@ export const Navbar = () => {
                     <TbMessageCircle />
                     </Icon>
                 </Button>
-                <ProfileImage options={defaultImage} onClick={onOpenModal}/>
+                <ProfileImage option={images[0]} onClick={onOpenModal}/>
             </Items>
         </Nav>
         <NavModal open={open} onCloseModal={onCloseModal} />

@@ -1,5 +1,5 @@
 import { Dashboard } from "../pages/Dashboard"
-import { Navbar } from "../pages/Navbar"
+import { Navbar } from "../components/Navbar"
 export const Home = () => {
     return (
         <>
